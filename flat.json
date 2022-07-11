@@ -1,0 +1,22 @@
+{
+  "name": "Http",
+  "version": "0.1.0",
+  "description": "Flat HTTP Library",
+  "author": "Braden Steffaniak",
+  "license": "ISC",
+  "scripts": {},
+  "main": {
+    "source": "src/main",
+    "dependencies": {
+      "../Json": "local",
+      "../Compiler-String-Extensions": "local"
+    }
+  },
+  "test": {
+    "mainClass": "flatlang/http/Http_TestSuite",
+    "source": "src",
+    "dependencies": {
+      "../Nest": "local"
+    }
+  }
+}

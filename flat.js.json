@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "test": "node dist/test.js"
+  },
+  "main": {
+    "outDirectory": "dist",
+    "outFile": "index.js",
+    "dependencies": {
+      "axios": "npm ^0.27.2"
+    }
+  },
+  "test": {
+    "outDirectory": "dist",
+    "outFile": "test.js",
+    "dependencies": {}
+  }
+}
