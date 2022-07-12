@@ -1,0 +1,14 @@
+package "flatlang/http"
+
+import "flatlang/datastruct/HashMap"
+
+class {
+  public construct(
+    visible String url,
+    visible String method,
+    visible HashMap<String, String> headers = new HashMap(),
+    visible String encoding = null
+  ) {}
+
+  public async run() -> Response => null {}
+}

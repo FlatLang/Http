@@ -1,0 +1,37 @@
+package "flatlang/http"
+
+import "flatlang/datastruct/HashMap"
+
+class {
+  public async run() -> Response => null {
+    external {
+      var headers = {};
+    }
+
+    native var Char[] data
+
+    headers.forEach((pair) => {
+      external {
+        headers[#{pair.key.chars.data}] = #{pair.value.chars.data};
+      }
+    })
+
+    external {
+      try {
+        const response = await #{Http.Global.axios}({
+          method: #{method.chars.data},
+          url: #{url.chars.data},
+          headers: headers
+        });
+
+        #{data} = JSON.stringify(response.data)
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    return new Response(
+      data: new String(data)
+    )
+  }
+}
