@@ -8,15 +8,14 @@
   "main": {
     "source": "src/main",
     "dependencies": {
-      "../Json": "local",
-      "../Compiler-String-Extensions": "local"
+      "github:FlatLang/Json": "master"
     }
   },
   "test": {
     "mainClass": "flatlang/http/Http_TestSuite",
     "source": "src",
     "dependencies": {
-      "../Nest": "local"
+      "github:FlatLang/Nest": "master"
     }
   }
 }
