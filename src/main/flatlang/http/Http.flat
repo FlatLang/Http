@@ -6,7 +6,7 @@ class {
   public static async get(
     String url,
     HashMap<String, String> headers = new HashMap()
-  ) => await new Request(
+  ) => new Request(
       url: url,
       method: "GET",
       headers: headers
