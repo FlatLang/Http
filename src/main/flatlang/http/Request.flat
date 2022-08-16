@@ -6,7 +6,7 @@ class {
   public construct(
     visible String url,
     visible String method,
-    visible HashMap<String, String> headers = new HashMap(),
+    visible HashMap<String, String> headers = HashMap(),
     visible String encoding = null
   ) {}
 

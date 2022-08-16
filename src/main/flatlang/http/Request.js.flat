@@ -30,8 +30,8 @@ class {
       }
     }
 
-    return new Response(
-      data: new String(data)
+    return Response(
+      data: String(data)
     )
   }
 }

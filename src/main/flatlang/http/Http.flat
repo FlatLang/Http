@@ -5,8 +5,8 @@ import "flatlang/datastruct/HashMap"
 class {
   public static async get(
     String url,
-    HashMap<String, String> headers = new HashMap()
-  ) => new Request(
+    HashMap<String, String> headers = HashMap()
+  ) => Request(
       url: url,
       method: "GET",
       headers: headers
