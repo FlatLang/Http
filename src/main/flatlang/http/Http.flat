@@ -7,7 +7,7 @@ class {
     String url,
     HashMap<String, String> headers = HashMap()
   ) => Request(
-      url: url,
+      url,
       method: "GET",
       headers: headers
     ).run()
