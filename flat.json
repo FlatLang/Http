@@ -13,7 +13,7 @@
   },
   "test": {
     "mainClass": "flatlang/http/Http_TestSuite",
-    "source": "src",
+    "source": "src/**/*_Test*.flat",
     "dependencies": {
       "github:FlatLang/Nest": "master"
     }
