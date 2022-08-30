@@ -7,19 +7,21 @@
   "scripts": {
     "test": "node dist/test.js"
   },
-  "main": {
-    "source": "src",
-    "dependencies": {
-      "github:FlatLang/Json": "master"
-    }
-  },
-  "test": {
-    "mainClass": "flatlang/http/Http_TestSuite",
-    "source": "src/**/*_Test*.flat",
-    "dependencies": {
-      "github:FlatLang/Nest": "master",
-      "github:FlatLang/System": "master",
-      "github:FlatLang/IO": "master"
+  "sources": {
+    "main": {
+      "source": "src",
+      "dependencies": {
+        "github:FlatLang/Json": "master"
+      }
+    },
+    "test": {
+      "mainClass": "flatlang/http/Http_TestSuite",
+      "source": "src/**/*_Test*.flat",
+      "dependencies": {
+        "github:FlatLang/Nest": "master",
+        "github:FlatLang/System": "master",
+        "github:FlatLang/IO": "master"
+      }
     }
   }
 }
