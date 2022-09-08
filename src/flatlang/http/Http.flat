@@ -14,17 +14,12 @@ class {
 
   public static class Global {
     external type AxiosType
-    private static var AxiosType _axios
-    visible static AxiosType axios {
-        get {
-          external {
-            if (!#{_axios}) {
-              #{_axios} = require('axios');
-            }
-          }
-
-          return _axios
+    visible static lazy AxiosType axios {
+      get {
+        external {
+          return require('axios');
         }
+      }
     }
   }
 }

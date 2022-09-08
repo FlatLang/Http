@@ -24,7 +24,13 @@ class {
           headers: headers
         });
 
-        #{data} = JSON.stringify(response.data)
+        if (typeof response.data === 'string') {
+          #{data} = response.data;
+        } else if (typeof response.data === 'object') {
+          #{data} = JSON.stringify(response.data)
+        } else {
+          console.error("Failed for content-type", typeof response.data);
+        }
       } catch (e) {
         console.error(e);
       }

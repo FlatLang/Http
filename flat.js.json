@@ -6,7 +6,9 @@
     "main": {
       "outDirectory": "dist",
       "outFile": "index.js",
-      "dependencies": {}
+      "dependencies": {
+        "npm:axios": "latest"
+      }
     },
     "test": {
       "outDirectory": "dist",
