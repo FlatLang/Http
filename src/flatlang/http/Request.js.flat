@@ -16,6 +16,13 @@ class {
       }
     })
 
+    log.debug("|
+      Sending request:
+        method: #{method}
+        url: #{url}
+        headers: #{headers.toJson()}
+      |")
+
     external {
       try {
         const response = await #{Http.Global.axios}({
@@ -33,11 +40,23 @@ class {
         }
       } catch (e) {
         console.error(e);
+        #{throw Exception("Request unsuccessful")};
       }
     }
 
+    let responseData = String(data)
+
+    log.debug("|
+      Received response for request:
+        method: #{method}
+        url: #{url}
+        headers: #{headers.toJson()}
+      |")
+
+    log.trace("responseData: #{responseData}")
+
     return Response(
-      data: String(data)
+      data: responseData
     )
   }
 }
