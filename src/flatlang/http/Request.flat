@@ -1,8 +1,17 @@
 package flatlang/http
 
+import flat/log/Logger
+
 import flatlang/datastruct/HashMap
 
+import flatlang/regex/Regex
+import flatlang/regex/Pattern
+import flatlang/regex/RegexStringExtensions
+
 class {
+  let static Logger log = Logger(Request.class)
+    :addFilter({ _.replace(Pattern("(\"Authorization\":\")[^\"]+\""), "$1{{REDACTED}}\"") })
+
   public construct(
     visible String url,
     visible String method,
