@@ -1,7 +1,7 @@
-package flatlang/http
+package flat/http
 
-import flatlang/datastruct/HashMap
-import flatlang/time/Timer
+import flat/datastruct/HashMap
+import flat/time/Timer
 
 class {
   public async run() -> Response => null {

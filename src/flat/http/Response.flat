@@ -1,4 +1,4 @@
-package flatlang/http
+package flat/http
 
 class {
   public construct(

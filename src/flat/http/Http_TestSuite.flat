@@ -1,9 +1,9 @@
-package flatlang/http
+package flat/http
 
 import novex/nest/TestResult
 
-import flatlang/time/Timer
-import flatlang/io/FancyOutputStream
+import flat/time/Timer
+import flat/io/FancyOutputStream
 
 [TestSuite [
   Http_Test

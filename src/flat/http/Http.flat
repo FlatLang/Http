@@ -1,6 +1,6 @@
-package flatlang/http
+package flat/http
 
-import flatlang/datastruct/HashMap
+import flat/datastruct/HashMap
 
 class {
   public static async get(

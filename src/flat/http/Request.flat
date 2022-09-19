@@ -1,12 +1,12 @@
-package flatlang/http
+package flat/http
 
 import flat/log/Logger
 
-import flatlang/datastruct/HashMap
+import flat/datastruct/HashMap
 
-import flatlang/regex/Regex
-import flatlang/regex/Pattern
-import flatlang/regex/RegexStringExtensions
+import flat/regex/Regex
+import flat/regex/Pattern
+import flat/regex/RegexStringExtensions
 
 class {
   let static Logger log = Logger(Request.class)

@@ -1,6 +1,6 @@
-package flatlang/http
+package flat/http
 
-import flatlang/http/Http
+import flat/http/Http
 
 testable class {
   test `can create`() {
