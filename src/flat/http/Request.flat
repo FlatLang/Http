@@ -1,11 +1,10 @@
 package flat/http
 
 import flat/log/Logger
-
 import flat/datastruct/HashMap
-
 import flat/regex/Regex
 import flat/regex/Pattern
+
 import flat/regex/RegexStringExtensions
 
 class {
