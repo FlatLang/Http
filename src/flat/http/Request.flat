@@ -8,7 +8,7 @@ import flat/regex/Pattern
 import flat/regex/RegexStringExtensions
 
 class {
-  let static Logger log = Logger(Request.class)
+  static Logger log = Logger(Request.class)
     :addFilter({ _.replace(Pattern("(\"Authorization\":\")[^\"]+\""), "$1{{REDACTED}}\"") })
 
   public construct(
