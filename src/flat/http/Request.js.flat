@@ -28,21 +28,28 @@ class {
 
     external {
       try {
-        const response = await #{Http.Global.axios}({
+        const options = {
           method: #{method.chars.data},
-          url: #{url.chars.data},
           headers: headers
+        }; 
+
+        const chunks = [];
+
+        await new Promise((resolve, reject) => {
+          #{Http.Global.https}.request(#{url.chars.data}, options, (res) => {
+            res.on("data", (chunk) => {
+              chunks.push(chunk);
+            });
+
+            res.on("end", () => {
+              #{timer:stop()};
+              #{data} = Buffer.concat(chunks).toString();
+              resolve();
+            });
+          }).on("error", (err) => {
+            reject(err);
+          }).end();
         });
-
-        #{timer:stop()};
-
-        if (typeof response.data === 'string') {
-          #{data} = response.data;
-        } else if (typeof response.data === 'object') {
-          #{data} = JSON.stringify(response.data)
-        } else {
-          console.error("Failed for content-type", typeof response.data);
-        }
       } catch (e) {
         #{timer:stop()};
         console.error(e);

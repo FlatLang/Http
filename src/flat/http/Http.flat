@@ -13,11 +13,11 @@ class {
     ).run()
 
   public static class Global {
-    external type AxiosType
-    visible static lazy AxiosType axios {
+    external type HttpsType
+    visible static lazy HttpsType https {
       get {
         external {
-          return require('axios');
+          return require('https');
         }
       }
     }
