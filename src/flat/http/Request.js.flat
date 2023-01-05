@@ -11,9 +11,9 @@ class {
 
     native var Char[] data
 
-    headers.forEach((pair) => {
+    headers.forEach({
       external {
-        headers[#{pair.key.chars.data}] = #{pair.value.chars.data};
+        headers[#{_x.key.chars.data}] = #{_x.value.chars.data};
       }
     })
 
@@ -31,7 +31,7 @@ class {
         const options = {
           method: #{method.chars.data},
           headers: headers
-        }; 
+        };
 
         const chunks = [];
 
