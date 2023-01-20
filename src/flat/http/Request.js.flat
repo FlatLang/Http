@@ -9,7 +9,7 @@ class {
       var headers = {};
     }
 
-    native var Char[] data
+    native_array native var Char[] data
 
     headers.forEach({
       external {
