@@ -15,7 +15,8 @@ class {
     visible String url,
     visible String method,
     visible HashMap<String, String> headers = HashMap(),
-    visible String encoding = null
+    visible String encoding = null,
+    visible Int timeout = 60000
   ) {}
 
   public async run() -> Response => null {}

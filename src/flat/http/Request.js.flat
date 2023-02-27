@@ -30,7 +30,8 @@ class {
       try {
         const options = {
           method: #{method.chars.data},
-          headers: headers
+          headers: headers,
+          timeout: #{timeout}
         };
 
         const chunks = [];
