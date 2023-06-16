@@ -22,15 +22,4 @@ class {
             method: method,
             headers: headers
         ).run()
-
-    public static class Global {
-        external type HttpsType
-        visible static lazy HttpsType https {
-            get {
-                external {
-                    return require('https');
-                }
-            }
-        }
-    }
 }

@@ -3,6 +3,8 @@ package flat/http
 import flat/datastruct/HashMap
 import flat/time/Timer
 
+import static flat/node/import/Import
+
 class {
     public async run() -> Response => null {
         external {
@@ -37,19 +39,21 @@ class {
                 const chunks = [];
 
                 await new Promise((resolve, reject) => {
-                    #{Http.Global.https}.request(#{url.chars.data}, options, (res) => {
-                        res.on("data", (chunk) => {
-                            chunks.push(chunk);
-                        });
+                    #{import("https")$}.then((https) => {
+                        https.request(#{url.chars.data}, options, (res) => {
+                            res.on("data", (chunk) => {
+                                chunks.push(chunk);
+                            });
 
-                        res.on("end", () => {
-                            #{timer:stop()};
-                            #{data} = Buffer.concat(chunks).toString();
-                            resolve();
-                        });
-                    }).on("error", (err) => {
-                        reject(err);
-                    }).end();
+                            res.on("end", () => {
+                                #{timer:stop()};
+                                #{data} = Buffer.concat(chunks).toString();
+                                resolve();
+                            });
+                        }).on("error", (err) => {
+                            reject(err);
+                        }).end();
+                    });
                 });
             } catch (e) {
                 #{timer:stop()};
