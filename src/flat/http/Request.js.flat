@@ -27,6 +27,7 @@ class {
             |")
 
         let timer = Timer():start()
+        native_array native var Char[] error_message
 
         external {
             try {
@@ -58,7 +59,14 @@ class {
             } catch (e) {
                 #{timer:stop()};
                 console.error(e);
-                #{throw Exception("Request unsuccessful")};
+                #{error_message} = e.toString();
+                #{throw Exception("|
+                    Request unsuccessful:
+                        method: #{method}
+                        url: #{url}
+                        headers: #{headers.toJson()}
+                        message: #{String(error_message)}
+                    |")};
             }
         }
 
